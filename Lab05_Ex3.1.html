@@ -1,0 +1,220 @@
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Khám phá nội dung qua infographic và video trong một trang.">
+  <title>Infographic & Video</title>
+
+  <style>
+    /* Bảng màu và kiểu chữ chung */
+    :root {
+      color-scheme: light;
+      --ink: #172033;
+      --muted: #667085;
+      --accent: #635bff;
+      --surface: #ffffff;
+      --page: #f4f6fb;
+      --border: #e7eaf1;
+      --shadow: 0 18px 50px rgb(25 35 65 / 9%);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background:
+        radial-gradient(ellipse at 50% 0%, rgb(99 91 255 / 10%), transparent 35rem),
+        var(--page);
+      color: var(--ink);
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+        sans-serif;
+      line-height: 1.6;
+    }
+
+    .container {
+      width: min(100% - 2rem, 1080px);
+      margin-inline: auto;
+    }
+
+    /* Phần giới thiệu đầu trang */
+    .hero {
+      padding: clamp(3rem, 8vw, 6rem) 0 2.5rem;
+      text-align: center;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      margin: 0 0 1rem;
+      padding: 0.35rem 0.8rem;
+      border: 1px solid rgb(99 91 255 / 20%);
+      border-radius: 999px;
+      background: rgb(99 91 255 / 7%);
+      color: var(--accent);
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      max-width: 760px;
+      margin: 0 auto;
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      letter-spacing: -0.04em;
+      line-height: 1.12;
+    }
+
+    .intro {
+      max-width: 660px;
+      margin: 1.2rem auto 0;
+      color: var(--muted);
+      font-size: clamp(1rem, 2vw, 1.125rem);
+    }
+
+    /* Các khối nội dung */
+    main {
+      display: grid;
+      gap: 1.5rem;
+      padding-bottom: 3rem;
+    }
+
+    .card {
+      overflow: hidden;
+      border: 1px solid var(--border);
+      border-radius: 1.25rem;
+      background: var(--surface);
+      box-shadow: var(--shadow);
+    }
+
+    .card-header {
+      padding: 1.25rem 1.5rem 0.75rem;
+    }
+
+    .card-header h2 {
+      margin: 0;
+      font-size: clamp(1.2rem, 3vw, 1.5rem);
+      letter-spacing: -0.02em;
+    }
+
+    .card-header p {
+      margin: 0.35rem 0 0;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    /* Ảnh hiển thị theo đúng tỷ lệ của tệp */
+    .infographic-wrap {
+      padding: 0.5rem 1.5rem 1.5rem;
+      text-align: center;
+    }
+
+    .infographic {
+      display: block;
+      width: 100%;
+      height: auto;
+      margin-inline: auto;
+      border-radius: 0.75rem;
+      background: #f1f3f8;
+    }
+
+    /* Tạo khung video 16:9, tự co giãn theo chiều rộng */
+    .video-frame {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      overflow: hidden;
+      background: #111827;
+    }
+
+    .video-frame iframe {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
+    footer {
+      padding: 1.5rem 1rem 2rem;
+      color: var(--muted);
+      font-size: 0.9rem;
+      text-align: center;
+    }
+
+    @media (max-width: 600px) {
+      .container {
+        width: min(100% - 1.25rem, 1080px);
+      }
+
+      .card {
+        border-radius: 1rem;
+      }
+
+      .card-header {
+        padding: 1rem 1rem 0.65rem;
+      }
+
+      .infographic-wrap {
+        padding: 0.4rem 0.75rem 0.75rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="hero container">
+    <p class="eyebrow">Infographic & Video</p>
+    <!-- Chỉnh tiêu đề này cho khớp với chủ đề nội dung -->
+    <h1>Khám phá chủ đề qua hình ảnh và video</h1>
+    <!-- Viết một câu giới thiệu ngắn về infographic và video -->
+    <p class="intro">
+      Cùng tìm hiểu những thông tin nổi bật qua infographic trực quan và video
+      được tuyển chọn, tất cả trong một trang dễ xem trên mọi thiết bị.
+    </p>
+  </header>
+
+  <main class="container">
+    <section class="card" aria-labelledby="infographic-title">
+      <div class="card-header">
+        <h2 id="infographic-title">Infographic</h2>
+        <p>Tóm tắt nội dung bằng hình ảnh trực quan.</p>
+      </div>
+
+      <div class="infographic-wrap">
+        <!-- Thay infographic.jpg bằng tên hoặc đường dẫn đến tệp infographic -->
+        <img
+          class="infographic"
+          src="c:\Users\acer\OneDrive - ctu.edu.vn\26-27hk1-ct005d04-labs-trietstudent\lab05\Infographic lợi ích công nghệ số trong học tập.png"
+          alt="Infographic minh họa nội dung của trang"
+        >
+      </div>
+    </section>
+
+   <section class="section" aria-labelledby="video-title">
+                <h2 class="section-heading" id="video-title">Video giới thiệu</h2>
+                <div class="content">
+                    <div class="video-frame">
+                        <iframe src="https://www.youtube.com/embed/gs7d2DPqusA?si=0244EhUVyc96FnFq" title="YouTube video player"
+                            frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+                        </iframe>
+                    </div>
+                    <a class="video-link" href="https://youtu.be/gs7d2DPqusA" target="_blank" rel="noopener noreferrer">
+                        Mở video trên YouTube
+                    </a>
+                </div>
+            </section>
+
+  </main>
+
+  <footer>
+    Nội dung văn bản tham khảo từ Google Gemini, hình ảnh từ Unsplash (Unsplash license). Video tạo bởi CapCut, tài liệu từ Pexels/FreeSound (CC0).
+  </footer>
+</body>
+</html>
+```
